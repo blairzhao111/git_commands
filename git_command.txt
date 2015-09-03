@@ -1,0 +1,12 @@
+Git common commands:
+For details, check git help
+1.configuration:
+git config --global user.name "Your username" :config your global username
+git config --global user.email "Your email" :config your global email address
+git config --list: list out your config information
+git config user.email :check single setting in your config
+
+2.create repository
+git init :initialize git repository
+
+3.commit
