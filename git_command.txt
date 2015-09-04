@@ -1,6 +1,7 @@
 Git common commands:
 For details, check git help
 1.configuration:
+git --version :check installed git's versions on you computer
 git config --global user.name "Your username" :config your global username
 git config --global user.email "Your email" :config your global email address
 git config --list: list out your config information
@@ -9,4 +10,60 @@ git config user.email :check single setting in your config
 2.create repository
 git init :initialize git repository
 
-3.commit
+3.check repository status
+git status :check repository's status, if there are uncommited changes, it will show by git status command.
+git diff :show all uncommitted updates in repository, by default it would be the difference between working copy and repository.if your file is adding into
+          staged area, use this command without option will not show any difference.
+git diff --staged :will compare changes between staged area and repository.
+git log :use to view commits records/history,which will show authors and commits dates.
+git log --author="name" :will only show the commits made by given name
+
+4.save your changes, two steps: adding and commiting or just one step
+git add . :adds all your modified files in current depository to the queue(staging area) to be committed later. Files are not committed.
+git add specifiedfile :adds given modified files in depository to the queue to be committed later. Files are not committed. Like selecting files to be saved.
+git commit :commits the files that have been added and creates a new revision with a log... If you do not add any files, git will not commit anything
+            It's like to save and record adding changes locally.
+git commit -m "your commit message" :make commits(kind of like a record log or a snapshot) to your added changes, 
+     (-m for message)                you can come back to this time of commit anytime in the future.Make your message descriptive.
+git commit -am "messages" :will both do add and commit, be careful this command will grab everything in your working copy and add it/them to repository.
+
+5.delete files and rename files
+git rm file : this not only delete file from git depository, also from working copies.
+              After finishing deletion, you have to commit it to record in case that you delete file by accident or you want to come back to that file later.
+git mv file1 file2 :same like bash command
+
+6.discard changes in working copy
+git checkout -- file : check given file in your repository and make it to your working copy
+
+7.unstaged files
+git reset HEAD file : unstaged the given file and bring it back to working copy
+
+8.Getting old version of files from the repository
+git checkout commitNumber -- file
+
+9.associate with remote repository on github
+git remote add nameofRemote urlofRemote :add remote to your local repository, nameofRemote is like a nicename for this remote and 
+                                             address is the corresponsing github repository url.
+git remote set-url nameofRemote urlofRemote :set or change url of your given remote depository
+git remote :check all remotes associated with current local repository.
+git remote -v :view remote connections.
+git push -u nameofRemote :push your local repository to your github remote repository on server.
+git push nameofRemote branchName :update your local changes to remote depository, specify which branch.
+git pull remoteName branchName :pull changes from a remote depository's branch back to local depository
+git fetch --dry--run :see changes to remote before you pull in
+
+10.fork a project on github and clone it locally
+git clone urlFromGithub: clone a remote repository locally and this local repo will connect to cloned remote automatically.
+                         if you remote repo is forked from another repo, normally, this local is going to connect original remote.
+                         use git remote add upStream urlFromGithub
+
+11.brance
+git brance branchName :create a new brance by given name
+git checkout branceName : use checkout to navigate to the new branch
+git checkout -b branchName :create and switch to a new brance in one line
+git branch :list out all branches 
+git branch -m newName :rename a brance you're currently on
+
+12.add collaborations to your repository
+
+
