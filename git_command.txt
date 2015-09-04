@@ -57,13 +57,19 @@ git clone urlFromGithub: clone a remote repository locally and this local repo w
                          if you remote repo is forked from another repo, normally, this local is going to connect original remote.
                          use git remote add upStream urlFromGithub
 
-11.brance
+11.brances and merge
+git branch :list out all branches 
 git brance branchName :create a new brance by given name
 git checkout branceName : use checkout to navigate to the new branch
 git checkout -b branchName :create and switch to a new brance in one line
-git branch :list out all branches 
 git branch -m newName :rename a brance you're currently on
+git branch -d branchName :delete the given local branch
+git merge branchName :merge given branch into current branch
+git push remoteName --delete branchName :remove given remote branch from given remote repository.
+
 
 12.add collaborations to your repository
+
+13.pull request
 
 
